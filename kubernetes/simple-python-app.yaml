@@ -2,7 +2,7 @@ apiVersion: apps/v1 # which API group and version to use
 kind: Deployment # type of workload resource that run and manage containers and pods
 metadata:
   name: simple-python-app-v1 # name of Deployment
-  namespace: app-lab 
+  namespace: app-lab # namespace for lab
   labels:
     tags.datadoghq.com/env: lab
     tags.datadoghq.com/service: simple-python-app
@@ -45,6 +45,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: simple-python-app-v2
+  namespace: app-lab # namespace for lab
   labels:
     tags.datadoghq.com/env: lab
     tags.datadoghq.com/service: simple-python-app
@@ -84,9 +85,10 @@ spec:
 kind: Service # providing stable network endpoint to access the pods
 apiVersion: v1
 metadata:
+  name: simple-python-app
+  namespace: app-lab # namespace for lab
   labels:
     app: simple-python-app
-  name: simple-python-app
 spec:
   type: NodePort
   selector:
