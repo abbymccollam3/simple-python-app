@@ -2,6 +2,7 @@ apiVersion: apps/v1 # which API group and version to use
 kind: Deployment # type of workload resource that run and manage containers and pods
 metadata:
   name: simple-python-app-v1 # name of Deployment
+  namespace: app-lab 
   labels:
     tags.datadoghq.com/env: lab
     tags.datadoghq.com/service: simple-python-app
