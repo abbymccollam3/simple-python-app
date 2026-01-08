@@ -24,7 +24,7 @@ spec:
     spec: # what containers to run, resource limits, env variables
       containers:
         - name: simple-python-app 
-          image: IMAGE_REPO/simple-python-app
+          image: docker.io/IMAGE_REPO/simple-python-app:0.1
           imagePullPolicy: Always
           resources: 
             requests:
@@ -67,7 +67,7 @@ spec:
     spec:
       containers:
         - name: simple-python-app 
-          image: IMAGE_REPO/simple-python-app
+          image: docker.io/IMAGE_REPO/simple-python-app:0.2
           imagePullPolicy: Always
           resources:
             requests:
