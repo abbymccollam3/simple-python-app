@@ -2,6 +2,13 @@ datadog:
   site: "datadoghq.com"
   clusterName: "your-cluster-name-here"
   apiKeyExistingSecret: "datadog-secret"
+  env:
+    - name: DD_HOSTNAME
+      valueFrom:
+        fieldRef:
+          fieldPath: spec.nodeName
+  kubelet:
+    tlsVerify: false
   clusterChecks:
     enabled: true
   operator:
