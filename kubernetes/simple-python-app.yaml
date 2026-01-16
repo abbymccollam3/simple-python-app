@@ -51,9 +51,9 @@ metadata:
     tags.datadoghq.com/service: simple-python-app
     tags.datadoghq.com/version: "0.2"
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
+  replicas: 1 # number of replicas we need to create
+  selector: # which pods the Deployment needs to manage and control 
+    matchLabels: # uses match labels to know which pods to monitor
       app.kubernetes.io/name: simple-python-app
   template:
     metadata:
